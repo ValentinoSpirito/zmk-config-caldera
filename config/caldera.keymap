@@ -9,43 +9,37 @@
 
                 default_layer {
 // ---------------------------------------------------------------------------------
-// |RESET  | BT 1 |BT_CLR|OUT_TOG|  4  |  5  |     |  6  |  7  |  8  |  9  |  0  | BKSP |
-// |   TAB  |  Q  |  W  |  E  |  R  |  T  |     |  Z  |  U  |  I  |  O  |  P  |  Ü   |
-// |  ESC   |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Ö  |  Ä   |
-// |  SHFT  |  Y  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  -  |  ß   |
-// |  CTRL  | ALT | GUI | LWR | SPC | BKSP|     | ENT | SPC | RSE | LARW|DARW | RARW |
+// |  ESC  |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  | BKSP |
+// |  TAB  |  Q  |  W  |  E  |  R  |  T  |     |  Z  |  U  |  I  |  O  |  P  |  Ü   |
+// |  CTRL |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  Ö  |  Ä   |
+// |  SHFT |  Y  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  -  |  ß   |
+// |  LALT | GUI | LNR | LWR | SPC | BKSP|     | ENT | SPC | RSE | LARW|DARW | RARW |
                         bindings = <
-   &sys_reset    &bt BT_SEL 0 &bt BT_CLR &out OUT_TOG &kp N4     &kp N5                  &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp BSPC
+   &kp ESC       &kp N1       &kp N2     &kp N3       &kp N4     &kp N5                  &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp BSPC
    &kp TAB       &kp Q        &kp W      &kp E        &kp R      &kp T                   &kp Z      &kp U     &kp I      &kp O     &kp P     &kp LBKT
-   &kp ESC       &kp A        &kp S      &kp D        &kp F      &kp G                   &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL     &kp A        &kp S      &kp D        &kp F      &kp G                   &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
    &kp LSHFT     &kp Y        &kp X      &kp C        &kp V      &kp B                   &kp N      &kp M     &kp COMMA  &kp DOT   &kp SLASH &kp MINUS
-   &kp LCTRL     &kp LALT     &kp LGUI   &mo 1        &kp SPACE  &kp BSPC                &kp RET    &kp SPACE &mo 2      &kp LARW  &kp DARW  &kp RARW
+   &kp LALT      &kp LGUI     &trans     &mo 1        &kp SPACE  &kp BSPC                &kp RET    &kp SPACE &mo 2      &kp LARW  &kp DARW  &kp RARW
                         >;
                 };
 
                 lower_layer {
 // ---------------------------------------------------------------------------------
-// | BT_CLR | BT1 | BT2 | BT3 | BT4 | BT5 |     | F1  | F2  | F3  | F4  | F5  | F6   |
+// | RESET  | BT_CLR | BT1 | OUT_TOG |     |     |     | F1  | F2  | F3  | F4  | F5  | F6   |
 // |  TRANS |     |  7  |  8  |  9  |  +  |     | F7  | F8  | F9  | F10 | F11 | F12  |
 // |  TRANS |     |  4  |  5  |  6  |  -  |     |     |     |  '  |     |     |      |
 // |  TRANS |     |  1  |  2  |  3  |  * |     |     |     |     |     |     |      |
 // |        |     |  0  |     |     |  /  |     |     |     |     |     |     |      |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &kp F1    &kp F2    &kp F3       &kp F4    &kp F5    &kp F6
-   &trans     &trans       &kp N7       &kp N8       &kp N9       &kp KP_PLUS              &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
-   &trans     &trans       &kp N4       &kp N5       &kp N6       &kp KP_MINUS             &trans    &trans    &trans       &kp LS(MINUS) &trans &trans
-   &trans     &trans       &kp N1       &kp N2       &kp N3       &kp KP_MULTIPLY          &trans    &trans    &trans       &trans    &trans    &trans
-   &trans     &trans       &kp N0       &trans       &trans       &kp KP_DIVIDE            &trans    &trans    &trans       &trans    &trans    &trans
+   &sys_reset &bt BT_CLR &bt BT_SEL 0 &out OUT_TOG &trans       &trans                   &kp F1    &kp F2    &kp F3       &kp F4    &kp F5    &kp F6
+   &trans     &trans     &kp N7       &kp N8       &kp N9       &kp KP_PLUS              &kp F7    &kp F8    &kp F9       &kp F10   &kp F11   &kp F12
+   &trans     &trans     &kp N4       &kp N5       &kp N6       &kp KP_MINUS             &trans    &trans    &trans       &kp LS(MINUS) &trans &trans
+   &trans     &trans     &kp N1       &kp N2       &kp N3       &kp KP_MULTIPLY          &trans    &trans    &trans       &trans    &trans    &trans
+   &trans     &trans     &kp N0       &trans       &trans       &kp KP_DIVIDE            &trans    &trans    &trans       &trans    &trans    &trans
                         >;
                 };
 
                 raise_layer {
-// ---------------------------------------------------------------------------------
-// |  TRANS |  !  |  "  |  §  |  $  |  %  |     |  &  |  /  |  (  |  )  |  =  |  ?   |
-// |  TRANS |     |     |     |     |     |     |  <  |  >  |  {  |  }  |  \  |  |   |
-// |  TRANS |     |     |     |     |     |     |  [  |  ]  |  (  |  )  |  ;  |  :   |
-// |  TRANS |     |     |     |     |     |     |  _  |  +  |     |     |     |      |
-// |        |     |     |     |     |     |     |     |     |     | UARW|     |      |
                         bindings = <
    &trans     &kp LS(N1) &kp LS(N2) &kp LS(N3) &kp LS(N4) &kp LS(N5)             &kp LS(N6) &kp LS(N7) &kp LS(N8) &kp LS(N9) &kp LS(N0) &kp LS(MINUS)
    &trans     &trans     &trans     &trans     &trans     &trans                 &kp NUBS   &kp LS(NUBS) &kp RA(N7) &kp RA(N0) &kp RA(MINUS) &kp RA(NUBS)
